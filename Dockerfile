@@ -8,4 +8,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "smart_contract_audit.py"]
+CMD ["python", "app.py"]
+
