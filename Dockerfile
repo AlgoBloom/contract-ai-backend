@@ -1,15 +1,11 @@
 FROM python:3.8-slim-buster
 
-RUN apt-get update && apt-get install -y git gcc libpq-dev
-
 WORKDIR /app
 
-RUN git clone https://github.com/ConsenSys/mythril.git && \
-    cd mythril && \
-    pip install -r requirements.txt && \
-    pip install . && \
-    cd ..
+COPY requirements.txt .
 
-EXPOSE 5000
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "mythril.api.app:create_app()"]
+COPY . .
+
+CMD ["python", "smart_contract_audit.py"]
