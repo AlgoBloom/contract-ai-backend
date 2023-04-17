@@ -1,2 +1,4 @@
-Flask==2.0.2
-Mythril==0.25.3
+flask
+gunicorn
+requests
+mythril
