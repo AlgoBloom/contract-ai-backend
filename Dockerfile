@@ -20,4 +20,4 @@ EXPOSE 5000
 ENV NAME Mythril Audit
 
 # Run app.py when the container launches
-CMD ["gunicorn", "app:app-20", "--log-file=-"]
+CMD ["gunicorn", "app:app", "--log-file=-"]
